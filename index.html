@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Amjad Khaliliah | CTO, CEO & AI Solution Architect</title>
+  <meta name="description" content="Official digital contact card and portfolio of Amjad Wakid Khaliliah - CTO at FacePal, CEO at PAL-DI (Sanad), AI Engineer & Solution Architect.">
+  <meta name="keywords" content="Amjad Khaliliah, AI Engineer, CTO FacePal, CEO PAL-DI, Fintech, Software Architect, Palestine, Digital Business Card">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Amjad Wakid Khaliliah | Contact & Portfolio">
+  <meta property="og:description" content="CTO FACEPAL • CEO PAL-DI (Sanad) • AI Engineer & Cloud Architect">
+  <meta property="og:image" content="assets/amjad_profile.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/amjad_profile.jpg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons (FontAwesome CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Animated Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    
+    <!-- Top Bar / Quick Controls -->
+    <header class="top-nav">
+      <div class="nav-status-badge">
+        <span class="status-pulse"></span>
+        <span class="status-text">Available for Advisory & Projects</span>
+      </div>
+      <div class="nav-actions">
+        <button id="qrBtn" class="icon-btn" title="Show QR Code" aria-label="Show QR Code">
+          <i class="fa-solid fa-qrcode"></i>
+        </button>
+        <button id="shareBtn" class="icon-btn" title="Share Profile" aria-label="Share Profile">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Profile Hero Card -->
+    <section class="hero-card glass-panel">
+      <div class="profile-avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <img src="assets/amjad_profile.jpg" alt="Amjad Wakid Khaliliah" class="profile-avatar" id="profileImg">
+        <div class="verified-badge" title="Verified Professional">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <h1 class="profile-name">Amjad Wakid Khaliliah</h1>
+        <p class="profile-headline">Fintech Technical Lead &bull; AI Architect</p>
+        
+        <!-- Positions Tags -->
+        <div class="roles-badges">
+          <span class="role-pill primary-pill"><i class="fa-solid fa-brain"></i> CTO @ FACEPAL</span>
+          <span class="role-pill secondary-pill"><i class="fa-solid fa-shield-halved"></i> CEO @ PAL-DI (Sanad)</span>
+          <span class="role-pill accent-pill"><i class="fa-solid fa-microchip"></i> AI Engineer</span>
+        </div>
+
+        <!-- Bio Brief -->
+        <p class="profile-bio">
+          I’m a Software Engineer who builds smart AI systems and trains models to work better for specific business needs. I also design cloud systems and create technical solutions that help companies run more efficiently.
+        </p>
+
+        <!-- Location & Contact Quick Snip -->
+        <div class="quick-meta-list">
+          <div class="meta-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Ramallah, West Bank, Palestine</span>
+          </div>
+          <div class="meta-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+972595457008">+972 595 457 008</a>
+          </div>
+          <div class="meta-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:amjadkhaliliah1998@gmail.com">amjadkhaliliah1998@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Action Buttons Grid -->
+      <div class="primary-actions-grid">
+        <a href="https://wa.me/972595457008?text=Hello%20Amjad,%20I%20reached%20out%20via%20your%20digital%20card." target="_blank" rel="noopener noreferrer" class="action-btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="tel:+972595457008" class="action-btn btn-call">
+          <i class="fa-solid fa-phone"></i>
+          <span>Call Me</span>
+        </a>
+
+        <a href="mailto:amjadkhaliliah1998@gmail.com?subject=Inquiry%20from%20Website" class="action-btn btn-email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+        </a>
+
+        <button id="bookMeetingBtn" class="action-btn btn-calendar">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book Meeting</span>
+        </button>
+      </div>
+
+      <!-- CV and vCard Dual Banner -->
+      <div class="featured-downloads">
+        <a href="assets/Amjad_Khaliliah_CV.pdf" download="Amjad_Khaliliah_CV.pdf" class="download-card cv-download-card" id="downloadCvBtn">
+          <div class="download-icon">
+            <i class="fa-solid fa-file-arrow-down"></i>
+          </div>
+          <div class="download-text">
+            <span class="download-title">Download Full CV</span>
+            <span class="download-sub">PDF Format &bull; Complete Experience</span>
+          </div>
+          <div class="download-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <button class="download-card vcard-download-card" id="saveContactBtn">
+          <div class="download-icon vcard-icon">
+            <i class="fa-solid fa-address-card"></i>
+          </div>
+          <div class="download-text">
+            <span class="download-title">Save Contact to Phone</span>
+            <span class="download-sub">Add to Contacts (.vcf)</span>
+          </div>
+          <div class="download-arrow">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Social & Professional Links Section -->
+    <section class="section-container">
+      <h2 class="section-title"><i class="fa-solid fa-link"></i> Connect & Follow</h2>
+      <div class="social-links-list">
+        
+        <a href="https://www.linkedin.com/in/amjadkhalilia" target="_blank" rel="noopener noreferrer" class="social-link-item linkedin-item">
+          <div class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div class="social-details">
+            <span class="social-platform">LinkedIn</span>
+            <span class="social-handle">in/amjadkhalilia</span>
+          </div>
+          <div class="social-tag">Connect</div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+        </a>
+
+        <a href="https://github.com/abuwalid1998" target="_blank" rel="noopener noreferrer" class="social-link-item github-item">
+          <div class="social-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="social-details">
+            <span class="social-platform">GitHub</span>
+            <span class="social-handle">abuwalid1998</span>
+          </div>
+          <div class="social-tag">Code & Repos</div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+        </a>
+
+        <a href="https://wa.me/972595457008" target="_blank" rel="noopener noreferrer" class="social-link-item whatsapp-item">
+          <div class="social-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="social-details">
+            <span class="social-platform">WhatsApp Direct</span>
+            <span class="social-handle">+972 595 457 008</span>
+          </div>
+          <div class="social-tag">Chat Now</div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+        </a>
+
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Amjad+Khaliliah&add=amjadkhaliliah1998@gmail.com&details=Discussion+regarding+tech+consulting,+AI+solutions,+or+collaboration." target="_blank" rel="noopener noreferrer" class="social-link-item gcal-item">
+          <div class="social-icon">
+            <i class="fa-regular fa-calendar-plus"></i>
+          </div>
+          <div class="social-details">
+            <span class="social-platform">Google Calendar</span>
+            <span class="social-handle">Add Appointment & Event</span>
+          </div>
+          <div class="social-tag">Schedule</div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs for Deep Dive Information -->
+    <section class="section-container">
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="roles-tab">
+          <i class="fa-solid fa-briefcase"></i> Experience
+        </button>
+        <button class="tab-btn" data-tab="skills-tab">
+          <i class="fa-solid fa-code"></i> AI & Tech
+        </button>
+        <button class="tab-btn" data-tab="contact-form-tab">
+          <i class="fa-solid fa-paper-plane"></i> Quick Message
+        </button>
+      </div>
+
+      <!-- Tab Content 1: Roles & Key Ventures -->
+      <div class="tab-pane active" id="roles-tab">
+        
+        <div class="timeline-card">
+          <div class="card-badge current">Current Venture</div>
+          <div class="timeline-header">
+            <div class="company-logo-avatar">
+              <i class="fa-solid fa-face-smile"></i>
+            </div>
+            <div>
+              <h3 class="role-title">Founder & Chief Executive Officer</h3>
+              <p class="company-name">FacePal &bull; Ramallah, Palestine</p>
+            </div>
+          </div>
+          <p class="role-desc">
+            AI-powered biometric fintech platform delivering contactless 'smile-to-pay' transactions and direct remittances. Integrates facial liveness detection and PMA Sandbox regulatory compliance.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-badge current">Current Project</div>
+          <div class="timeline-header">
+            <div class="company-logo-avatar paldi-avatar">
+              <i class="fa-solid fa-id-card-clip"></i>
+            </div>
+            <div>
+              <h3 class="role-title">CEO & Lead Architect</h3>
+              <p class="company-name">PAL-DI (Sanad) &bull; Decentralized Identity</p>
+            </div>
+          </div>
+          <p class="role-desc">
+            Palestinian Decentralized Financial Identity. Consortium blockchain architecture and smart contracts on Hyperledger Fabric for verifiable credential lifecycle management.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="company-logo-avatar bop-avatar">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <div>
+              <h3 class="role-title">Senior Software Engineer / Acting Tech Lead</h3>
+              <p class="company-name">Bank of Palestine &bull; Dec 2021 – Present</p>
+            </div>
+          </div>
+          <p class="role-desc">
+            Leading digital banking transformation, core enterprise microservices (Java/Spring Boot, Python), BankSealer AI fraud detection, automated signature verification, and CI/CD automation.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tab Content 2: Technical Skills & Competencies -->
+      <div class="tab-pane" id="skills-tab">
+        <div class="skills-category">
+          <h4 class="category-heading"><i class="fa-solid fa-robot"></i> AI, Machine Learning & Vision</h4>
+          <div class="tag-cloud">
+            <span class="skill-tag highlight">Computer Vision</span>
+            <span class="skill-tag highlight">Biometric Liveness Detection</span>
+            <span class="skill-tag">Signature Verification</span>
+            <span class="skill-tag">Anomaly Detection (Fraud)</span>
+            <span class="skill-tag">NLP & Large Language Models</span>
+            <span class="skill-tag">Synthetic Data (CTGAN)</span>
+            <span class="skill-tag">Qdrant Vector DB</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h4 class="category-heading"><i class="fa-solid fa-server"></i> Backend & Architecture</h4>
+          <div class="tag-cloud">
+            <span class="skill-tag highlight">Java (Spring Boot)</span>
+            <span class="skill-tag highlight">Python (FastAPI, Flask)</span>
+            <span class="skill-tag">Microservices Architecture</span>
+            <span class="skill-tag">RESTful API Gateways</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Appian & OutSystems</span>
+            <span class="skill-tag">n8n Workflow Automation</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h4 class="category-heading"><i class="fa-solid fa-cloud"></i> Cloud, DevOps & Databases</h4>
+          <div class="tag-cloud">
+            <span class="skill-tag">AWS Cloud (EC2, S3, ECS/EKS)</span>
+            <span class="skill-tag">Docker Containerization</span>
+            <span class="skill-tag">CI/CD Automation</span>
+            <span class="skill-tag">Oracle Database</span>
+            <span class="skill-tag">PostgreSQL / MySQL</span>
+            <span class="skill-tag">Redis & MongoDB</span>
+            <span class="skill-tag">Hyperledger Fabric</span>
+          </div>
+        </div>
+
+        <div class="education-box">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <span class="edu-degree">B.Sc. in Computer Software Engineering</span>
+            <span class="edu-school">Palestine Technical University (2017 – 2021)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 3: Quick Direct Message Form -->
+      <div class="tab-pane" id="contact-form-tab">
+        <form id="quickContactForm" class="contact-form">
+          <div class="form-group">
+            <label for="senderName"><i class="fa-solid fa-user"></i> Your Name</label>
+            <input type="text" id="senderName" class="form-input" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="senderSubject"><i class="fa-solid fa-tag"></i> Subject / Topic</label>
+            <input type="text" id="senderSubject" class="form-input" placeholder="e.g. AI Consulting / Project Inquiry" required>
+          </div>
+
+          <div class="form-group">
+            <label for="senderMessage"><i class="fa-solid fa-message"></i> Message</label>
+            <textarea id="senderMessage" class="form-textarea" rows="4" placeholder="Hi Amjad, I'd like to discuss..." required></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="button" id="sendViaWhatsApp" class="form-btn whatsapp-submit">
+              <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+            </button>
+            <button type="submit" id="sendViaEmail" class="form-btn email-submit">
+              <i class="fa-solid fa-envelope"></i> Send via Email
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- Schedule Appointment Modal Trigger Banner -->
+    <section class="appointment-banner glass-panel">
+      <div class="cal-banner-content">
+        <div class="cal-banner-icon">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div>
+          <h3>Schedule a 1-on-1 Consultation</h3>
+          <p>Pick a convenient time to meet via Google Meet or Phone.</p>
+        </div>
+      </div>
+      <button class="cal-open-modal-btn" id="openCalendarScheduler">
+        <span>Book Slot</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; <span id="currentYear">2026</span> Amjad Wakid Khaliliah</p>
+      <p class="footer-tagline">Building Intelligent AI & Scalable Cloud Solutions</p>
+    </footer>
+
+  </main>
+
+  <!-- Floating Sticky Bottom View Counter -->
+  <div class="floating-view-counter" id="viewCounterBadge" title="Total page visits counted">
+    <div class="counter-pulse"></div>
+    <div class="counter-content">
+      <i class="fa-regular fa-eye counter-eye-icon"></i>
+      <span class="counter-label">Views</span>
+      <span class="counter-number" id="visitCount">...</span>
+    </div>
+  </div>
+
+  <!-- QR Code Modal -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-box glass-panel">
+      <button class="modal-close" id="closeQrModal" aria-label="Close QR Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-badge-icon">
+          <i class="fa-solid fa-qrcode"></i>
+        </div>
+        <h3 class="modal-title">Scan Contact Card</h3>
+        <p class="modal-sub">Scan with any phone camera to view & save Amjad's profile instantly.</p>
+      </div>
+      <div class="qr-code-wrapper">
+        <img id="qrCodeImage" src="" alt="Amjad Khaliliah Contact QR Code" class="qr-image">
+      </div>
+      <div class="modal-actions">
+        <button class="modal-action-btn" id="copyProfileUrlBtn">
+          <i class="fa-solid fa-copy"></i> Copy Profile Link
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Appointment / Google Calendar Modal -->
+  <div class="modal-overlay" id="calendarModal">
+    <div class="modal-box glass-panel">
+      <button class="modal-close" id="closeCalModal" aria-label="Close Calendar Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-badge-icon cal-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3 class="modal-title">Schedule Google Calendar Appointment</h3>
+        <p class="modal-sub">Choose meeting details to create an invitation with Amjad directly.</p>
+      </div>
+
+      <div class="scheduler-form">
+        <div class="form-group">
+          <label for="meetingTitle"><i class="fa-solid fa-heading"></i> Meeting Title</label>
+          <input type="text" id="meetingTitle" class="form-input" value="Tech Discussion & Collaboration - Amjad Khaliliah">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="meetingDate"><i class="fa-solid fa-calendar"></i> Date</label>
+            <input type="date" id="meetingDate" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="meetingTime"><i class="fa-solid fa-clock"></i> Time</label>
+            <input type="time" id="meetingTime" class="form-input" value="11:00">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="meetingDetails"><i class="fa-solid fa-align-left"></i> Agenda / Notes</label>
+          <textarea id="meetingDetails" class="form-textarea" rows="2" placeholder="Discussion on AI Architecture / FacePal / Fintech consulting...">Consulting & Collaboration with Amjad Wakid Khaliliah (amjadkhaliliah1998@gmail.com)</textarea>
+        </div>
+
+        <div class="scheduler-actions">
+          <button id="confirmGCalBtn" class="form-btn gcal-submit">
+            <i class="fa-brands fa-google"></i> Open in Google Calendar
+          </button>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Amjad+Wakid+Khaliliah&add=amjadkhaliliah1998@gmail.com" target="_blank" rel="noopener noreferrer" class="instant-gcal-link">
+            Or quick default 1-click Google Calendar invite &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
